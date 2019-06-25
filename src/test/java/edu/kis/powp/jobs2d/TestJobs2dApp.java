@@ -52,6 +52,7 @@ public class TestJobs2dApp {
 
 		application.addTest("Load generate command", new CommandGenerator());
 		application.addTest("Clear generate command", (ActionEvent e) -> application.flushLoggerOutput());
+		application.addTest("Clean commands", (ActionEvent e )->{new CommandGenerator().clear();});
 
 
 		application.addTest("Run command", new SelectRunCurrentCommandOptionListener(DriverFeature.getDriverManager()));
