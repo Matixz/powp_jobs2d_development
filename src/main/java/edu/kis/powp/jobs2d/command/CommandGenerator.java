@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandGenerator implements Job2dDriver, ActionListener {
+public class CommandGenerator implements Job2dDriver {
 
   static  private List<DriverCommand> commands = new ArrayList<>();
 
@@ -28,8 +28,8 @@ public class CommandGenerator implements Job2dDriver, ActionListener {
         commands.add(new OperateToCommand(x, y));
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+
+    public void load() {
         String string = "";
         if (commands.isEmpty()) {
             string += "No command";

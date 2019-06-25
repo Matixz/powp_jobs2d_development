@@ -49,10 +49,10 @@ public class TestJobs2dApp {
 	 */
 	private static void setupCommandTests(Application application) {
 		application.addTest("Load secret command", new SelectLoadSecretCommandOptionListener());
-
-		application.addTest("Load generate command", new CommandGenerator());
-		application.addTest("Clear generate command", (ActionEvent e) -> application.flushLoggerOutput());
-		application.addTest("Clean commands", (ActionEvent e )->{new CommandGenerator().clear();});
+		
+		application.addTest("Load generate command", (ActionEvent e)->new CommandGenerator().load());
+		//application.addTest("Clear generate command", (ActionEvent e) -> application.flushLoggerOutput());
+		application.addTest("Clean commands", (ActionEvent e )->new CommandGenerator().clear());
 
 
 		application.addTest("Run command", new SelectRunCurrentCommandOptionListener(DriverFeature.getDriverManager()));
